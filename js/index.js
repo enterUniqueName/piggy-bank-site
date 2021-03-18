@@ -6,6 +6,7 @@ var resourcesMenuTrigger = document.getElementById('js-resources-menu-trigger');
 var resourcesSubMenuTitle = document.getElementById('js-resources-submenu-title');
 var aboutMenuTrigger = document.getElementById('js-about-menu-trigger');
 var aboutSubMenuTitle = document.getElementById('js-about-submenu-title');
+var body = document.getElementById('js-body');
 
 loanMenuTrigger.addEventListener('click', function(e) {
     if (e.currentTarget !== e.target) {
@@ -53,6 +54,7 @@ function handleMenu() {
     if (!open) {
         document.getElementById('js-navigation').classList.add('open');
         document.getElementById('js-hamburger').classList.add('is-active');
+        body.classList.add('mobile-menu-open');
         open = true;
     } else {
         document.getElementById('js-navigation').classList.remove('open', 'slideOut');
@@ -60,6 +62,7 @@ function handleMenu() {
         document.getElementById('js-loan-menu').classList.remove('openSubmenu');
         document.getElementById('js-resources-menu').classList.remove('openSubmenu');
         document.getElementById('js-about-menu').classList.remove('openSubmenu');
+        body.classList.remove('mobile-menu-open');
         open = false;
     }
 }

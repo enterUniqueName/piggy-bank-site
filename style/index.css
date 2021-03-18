@@ -81,6 +81,8 @@ a.button:hover {
     justify-content: flex-end;
     align-items:center;
     line-height: 40px;
+    max-width: 1300px;
+    margin: 0 auto;
 }
 .tab-item {
     font-size: 14px;
@@ -142,13 +144,23 @@ a.button:hover {
 .header {
     position: sticky;
     top: 40px;
+    /* display:flex; */
+    /* justify-content: space-between; */
+    /* align-items: center; */
+    width:100%;
+    background-color: white;
+    /* padding: 0 60px; */
+    height: 90px;
+    z-index:10;
+}
+.header .max-width-container {
     display:flex;
     justify-content: space-between;
     align-items: center;
-    width:100%;
-    background-color: white;
+    max-width:1300px;
+    margin: 0 auto;
     padding: 0 60px;
-    height: 90px;
+    height: 100%;
 }
 .header a {
     color: #0F3D59;
@@ -163,7 +175,7 @@ a.button:hover {
 }
 .navigation .menu-list {
     height: 90px;
-    margin-right:148px;
+    margin-right:48px;
 }
 .header .logo-container {
     width: 55px;
@@ -171,7 +183,7 @@ a.button:hover {
     min-width: 55px;
     min-height:55px;
     display: block;
-    margin-right: 148px;
+    margin-right: 48px;
 }
 .header .logo {
     background-image: url("../assets/logo.svg");
@@ -192,6 +204,7 @@ a.button:hover {
 .menu-list a {
     height: 100%;
 }
+.menu-item.has-submenu a {pointer-events: none;}
 .menu-item {
     font-size: 16px;
     font-weight: 500;
@@ -206,11 +219,11 @@ a.button:hover {
 }
 /* Sign In Section */
 .sign-in-container {
-    margin-left: 60px;
     width: 36px;
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-left: 48px;
 }
 .sign-in-container i {
     max-height: 34px;
@@ -233,7 +246,7 @@ a.button:hover {
     color: #3C99D4;
 }
 /* On larger screens, show menu under menu item */
-@media screen and (min-width: 600px) {
+@media screen and (min-width:1139px) {
     .menu-item:hover > ul {
         display: block;
     }
@@ -315,8 +328,8 @@ a.button:hover {
 }
 .banner a {
     color: white;
-    text-decoration: none;
-    width:100%;
+    text-decoration: underline;
+    /* width:100%; */
     text-align: center;
 }
 .banner p {
@@ -334,6 +347,12 @@ a.button:hover {
 .footer {
     width: 100%;
     background-color: #00182F;
+    
+}
+.footer-section-container {
+    width:100%;
+    max-width: 1300px;
+    margin: 0 auto;
     display:flex;
     justify-content: space-between;
     align-items:flex-start;
@@ -447,7 +466,7 @@ a.button:hover {
 /* 
 | ***** Mobile Media Queries
 */
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 1139px) {
     body {
         width: 100vw;
         overflow-x: hidden;
@@ -472,6 +491,9 @@ a.button:hover {
     /* Header */
     .header {
         top: 0;
+        /* padding: 0 30px; */
+    }
+    .header .max-width-container {
         padding: 0 30px;
     }
     .toolbar {
@@ -545,6 +567,7 @@ a.button:hover {
         top: -1px;
         width: 100%;
         padding: 0;
+        height: calc(100vh - 90px);
     }
     .submenu.openSubmenu.resources {
         top: calc(-60px * 3 - 4px);
@@ -568,13 +591,13 @@ a.button:hover {
         font-size: 16px;
     }
     /* Footer */
-    .footer {
+    .footer-section-container {
         flex-wrap: wrap;
-        padding: 148px 30px 16px;
+        padding: 148px 148px 16px;
         position:relative;
     }
     .footer .menu-section {
-        width: 50%;
+        width: 25%;
         margin-bottom: 60px;
     }
     .footer .footer-menu-title {
@@ -593,10 +616,34 @@ a.button:hover {
         left: 30px;
     }
     .footer .social-section .social-row {
+        margin-bottom:24px;
+    }
+    .footer .social-section .social-row .icon-container-social:not(:last-of-type) {
+        margin-right: 90px;
+    }
+}
+@media screen and (max-width: 999px) {
+    .footer-section-container {
+        flex-wrap: wrap;
+        padding: 148px 48px 16px;
+        position:relative;
+    }
+}
+@media screen and (max-width: 899px) {
+    .footer-section-container {
+        padding: 148px 30px 16px;
+    }
+    .footer .social-section .social-row {
         margin-bottom:48px;
     }
     .footer .social-section .social-row .icon-container-social:not(:last-of-type) {
         margin-right: 30px;
+    }
+}
+@media screen and (max-width: 799px) {
+    .footer .menu-section {
+        width: 50%;
+        margin-bottom: 60px;
     }
 }
 /* Mobile Only Stuff */
@@ -657,24 +704,43 @@ a.button:hover {
   /* Elastic */
   .hamburger--elastic .hamburger-inner {
     top: 2px;
-    transition-duration: 0.275s;
-    transition-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55); }
+    /* transition-duration: 0.275s; */
+    /* transition-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);  */
+}
     .hamburger--elastic .hamburger-inner::before {
       top: 10px;
-      transition: opacity 0.125s 0.275s ease; }
+      /* transition: opacity 0.125s 0.275s ease;  */
+      /* adding for basic rotation, not elastic */
+      transition-timing-function: ease;
+      transition-duration: .15s;
+      transition-property: transform,opacity;
+    }
     .hamburger--elastic .hamburger-inner::after {
       top: 20px;
-      transition: transform 0.275s cubic-bezier(0.68, -0.55, 0.265, 1.55); }
+      /* transition: transform 0.275s cubic-bezier(0.68, -0.55, 0.265, 1.55);  */
+    }
   
       .hamburger--elastic.is-active .hamburger-inner {
-    transform: translate3d(0, 10px, 0) rotate(135deg);
-    transition-delay: 0.075s; }
+    /* transform: translate3d(0, 10px, 0) rotate(135deg); */
+    /* transition-delay: 0.075s;  */
+    /* Adding for basic */
+    transform: translate3d(0,10px,0) rotate(45deg);
+    }
     .hamburger--elastic.is-active .hamburger-inner::before {
-      transition-delay: 0s;
-      opacity: 0; }
+      /* transition-delay: 0s; */
+      /* opacity: 0;  */
+      /* Adding for basic */
+      /* transform: rotate(-45deg) translate3d(-5.71429px,-6px,0); */
+      opacity: 0;
+      /* Adding to just hid instead of move the middle bar */
+      width: 0;
+    }
       .hamburger--elastic.is-active .hamburger-inner::after {
-      transform: translate3d(0, -20px, 0) rotate(-270deg);
-      transition-delay: 0.075s; }
+      /* transform: translate3d(0, -20px, 0) rotate(-270deg); */
+      /* transition-delay: 0.075s;  */
+      /* Adding for basic */
+      transform: translate3d(0,-20px,0) rotate(-90deg);
+    }
 
 
 
@@ -756,4 +822,8 @@ li:hover > .arrow.arrow-left {
 /* Menu Animations */
 .navigation.open.slideOut {
     left: -100vw;
+}
+.mobile-menu-open {
+    overflow: hidden;
+    height: 100vh;
 }

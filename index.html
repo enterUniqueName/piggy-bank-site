@@ -16,74 +16,77 @@
   <link rel="stylesheet" href="style/index.css">
 </head>
 
-<body>
+<body id="js-body">
 
   <header class="header">
 
-    <button id="js-hamburger" class="hamburger hamburger--elastic mobile-only" onClick="handleMenu()">
-      <span class="hamburger-box">
-        <span class="hamburger-inner"></span>
-    </button>
+    <div class="max-width-container">
 
-    <a class="logo-container" href="#"><i class="logo"></i></a>
+      <button id="js-hamburger" class="hamburger hamburger--elastic mobile-only" onClick="handleMenu()">
+        <span class="hamburger-box">
+          <span class="hamburger-inner"></span>
+      </button>
 
-    <nav id="js-navigation" class="navigation">
+      <a class="logo-container" href="#"><i class="logo"></i></a>
 
-      <div class="toolbar">
-        <ul class="tab-list">
-          <li class="tab-item"><a href="#"><i class="icon"></i>Continue My Application</a></li>
-          <li class="tab-item"><a href="#"><i class="icon"></i>Set Up Online Access</a></li>
-          <li class="tab-item"><a href="#"><i class="icon"></i>Join Our Team</a></li>
+      <nav id="js-navigation" class="navigation">
+
+        <div class="toolbar">
+          <ul class="tab-list">
+            <li class="tab-item"><a href="#"><i class="icon"></i>Continue My Application</a></li>
+            <li class="tab-item"><a href="#"><i class="icon"></i>Set Up Online Access</a></li>
+            <li class="tab-item"><a href="#"><i class="icon"></i>Join Our Team</a></li>
+          </ul>
+        </div>
+
+        <ul id="js-main-menu" class="menu-list">
+          <li id="js-loan-menu-trigger" class="menu-item has-submenu"><a>Loans</a><i class="icon mobile-only arrow arrow-right"></i>
+            <ul id="js-loan-menu" class="submenu loan">
+              <li id="js-loan-submenu-title" class="submenu-title mobile-only"><i class="icon arrow arrow-left"></i>Loan</li>
+      
+              <li class="submenu-item personal"><a href="#"><i class="icon"></i>Personal Loan</a></li>
+              <li class="submenu-item auto-secured"><a href="#"><i class="icon"></i>Auto-Secured Loan</a></li>
+              <li class="submenu-item bill-consolidated"><a href="#"><i class="icon"></i>Bill Consolidation Loan</a></li>
+              <li class="submenu-item emergency"><a href="#"><i class="icon"></i>Emergency Loan</a></li>
+              <li class="submenu-item holiday"><a href="#"><i class="icon"></i>Holiday Loan</a></li>
+              <li class="submenu-item home-improvement"><a href="#"><i class="icon"></i>Home Improvement Loan</a></li>
+              <li class="submenu-item school"><a href="#"><i class="icon"></i>K-12 School Loan</a></li>
+              <li class="submenu-item vacation"><a href="#"><i class="icon"></i>Vacation Loan</a></li>
+            </ul>
+          </li>
+          <li class="menu-item"><a href="#">Find a Branch</a></li>
+          <li class="menu-item"><a href="#">Payments</a></li>
+          <li id="js-resources-menu-trigger" class="menu-item has-submenu"><a>Resources<i class="icon mobile-only arrow arrow-right"></i></a>
+            <ul id="js-resources-menu" class="submenu resources">
+              <li id="js-resources-submenu-title" class="submenu-title mobile-only"><i class="icon arrow arrow-left"></i>Resources</li>
+      
+              <li class="submenu-item"><a href="#">FAQs</a></li>
+              <li class="submenu-item"><a href="#">Consumer Alerts</a></li>
+              <li class="submenu-item"><a href="#">Terms to Know</a></li>
+            </ul>
+          </li>
+          <li id="js-about-menu-trigger" class="menu-item has-submenu"><a>About<i class="icon mobile-only arrow arrow-right"></i></a>
+            <ul id="js-about-menu" class="submenu about">
+              <li id="js-about-submenu-title" class="submenu-title mobile-only"><i class="icon arrow arrow-left"></i>About</li>
+      
+              <li class="submenu-item"><a href="#">Our Team</a></li>
+              <li class="submenu-item"><a href="#">News & Updates</a></li>
+              <li class="submenu-item"><a href="#">Careers</a></li>
+            </ul>
+          </li>
+          <li class="menu-item"><a href="#">Contact</a></li>
         </ul>
+
+        <a href="#" class="button">Get Pre-Qualified</a>
+
+      </nav>
+
+      <div class='sign-in-container'>
+        <a href="#">
+          <i class="icon sign-in"></i>
+          <p>Sign In</p>
+        </a>
       </div>
-
-      <ul id="js-main-menu" class="menu-list">
-        <li id="js-loan-menu-trigger" class="menu-item has-submenu"><a>Loans</a><i class="icon mobile-only arrow arrow-right"></i>
-          <ul id="js-loan-menu" class="submenu loan">
-            <li id="js-loan-submenu-title" class="submenu-title mobile-only"><i class="icon arrow arrow-left"></i>Loan</li>
-    
-            <li class="submenu-item personal"><a href="#"><i class="icon"></i>Personal Loan</a></li>
-            <li class="submenu-item auto-secured"><a href="#"><i class="icon"></i>Auto-Secured Loan</a></li>
-            <li class="submenu-item bill-consolidated"><a href="#"><i class="icon"></i>Bill Consolidation Loan</a></li>
-            <li class="submenu-item emergency"><a href="#"><i class="icon"></i>Emergency Loan</a></li>
-            <li class="submenu-item holiday"><a href="#"><i class="icon"></i>Holiday Loan</a></li>
-            <li class="submenu-item home-improvement"><a href="#"><i class="icon"></i>Home Improvement Loan</a></li>
-            <li class="submenu-item school"><a href="#"><i class="icon"></i>K-12 School Loan</a></li>
-            <li class="submenu-item vacation"><a href="#"><i class="icon"></i>Vacation Loan</a></li>
-          </ul>
-        </li>
-        <li class="menu-item"><a href="#">Find a Branch</a></li>
-        <li class="menu-item"><a href="#">Payments</a></li>
-        <li id="js-resources-menu-trigger" class="menu-item has-submenu"><a>Resources<i class="icon mobile-only arrow arrow-right"></i></a>
-          <ul id="js-resources-menu" class="submenu resources">
-            <li id="js-resources-submenu-title" class="submenu-title mobile-only"><i class="icon arrow arrow-left"></i>Resources</li>
-    
-            <li class="submenu-item"><a href="#">FAQs</a></li>
-            <li class="submenu-item"><a href="#">Consumer Alerts</a></li>
-            <li class="submenu-item"><a href="#">Terms to Know</a></li>
-          </ul>
-        </li>
-        <li id="js-about-menu-trigger" class="menu-item has-submenu"><a>About<i class="icon mobile-only arrow arrow-right"></i></a>
-          <ul id="js-about-menu" class="submenu about">
-            <li id="js-about-submenu-title" class="submenu-title mobile-only"><i class="icon arrow arrow-left"></i>About</li>
-    
-            <li class="submenu-item"><a href="#">Our Team</a></li>
-            <li class="submenu-item"><a href="#">News & Updates</a></li>
-            <li class="submenu-item"><a href="#">Careers</a></li>
-          </ul>
-        </li>
-        <li class="menu-item"><a href="#">Contact</a></li>
-      </ul>
-
-      <a href="#" class="button">Get Pre-Qualified</a>
-
-    </nav>
-
-    <div class='sign-in-container'>
-      <a href="#">
-        <i class="icon sign-in"></i>
-        <p>Sign In</p>
-      </a>
     </div>
 
     <div class=banner><a href="#"><i class="icon info"></i><p>Covid-19 Update</p></a></div>
@@ -95,6 +98,7 @@
   </main>
 
   <footer class="footer">
+    <section class="footer-section-container">
 
           <section class="menu-section">
               <h3 class="footer-menu-title">Support</h3>
@@ -147,6 +151,7 @@
             </div>
             <p class="copyright">© 2021 Piggy Bank</p>
           </section>
+    </section>
   </footer>
 
   <script src="js/index.js"></script>
