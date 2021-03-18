@@ -448,6 +448,10 @@ a.button:hover {
 | ***** Mobile Media Queries
 */
 @media screen and (max-width: 600px) {
+    body {
+        width: 100vw;
+        overflow-x: hidden;
+    }
     .arrow {
         max-height: 14px;
         width: 8px;
