@@ -204,7 +204,7 @@ a.button:hover {
 .menu-list a {
     height: 100%;
 }
-.menu-item.has-submenu a {pointer-events: none;}
+.menu-item.has-submenu > a {pointer-events: none;}
 .menu-item {
     font-size: 16px;
     font-weight: 500;
