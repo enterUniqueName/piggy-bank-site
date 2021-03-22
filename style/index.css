@@ -203,8 +203,9 @@ a.button:hover {
 }
 .menu-list a {
     height: 100%;
+    width: 100%;
+    display:block;
 }
-.menu-item.has-submenu > a {pointer-events: none;}
 .menu-item {
     font-size: 16px;
     font-weight: 500;
